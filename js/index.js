@@ -36,3 +36,25 @@ function calculateRectangleArea() {
   const rectangleAreaSpan = document.getElementById("rectangle-area");
   rectangleAreaSpan.innerText = rectangleArea;
 }
+
+//COMMON FUNCTION FOR ALL AREA CALCULATION
+
+function getFirstInputValue(inputFieldId) {
+  const firstInput = document.getElementById(inputFieldId).value;
+  const firstValue = parseFloat(firstInput);
+  return firstValue;
+}
+
+function setInnerTextById(elementId, area) {
+  const element = document.getElementById(elementId);
+  element.innerText = area;
+}
+
+//Area calculation for parallelogram
+function calculatePlArea() {
+  const plBase = getFirstInputValue("pl-base");
+  const plHeight = getFirstInputValue("pl-height");
+  const plArea = plBase * plHeight;
+
+  setInnerTextById("pl-area", plArea);
+}
